@@ -1,0 +1,27 @@
+# Compiled Java classes
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.iws
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+/target/
+/build/
+/out/
+
+# Temporary files
+/tmp/
+*.tmp
+*.temp
