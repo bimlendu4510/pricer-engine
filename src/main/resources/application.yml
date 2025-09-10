@@ -1,0 +1,41 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 2000ms
+    database: 0
+    
+logging:
+  level:
+    com.pricer: DEBUG
+    root: INFO
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+# Pricing Configuration
+pricing:
+  source-strategies:
+    P1: BEST_PRICE    # P1 configured for Best Price
+    P2: DEEP_AVG      # P2 configured for Deep Avg  
+    P3: VWAP          # P3 configured for VWAP
+
+# Original FX configuration (preserved)
+fx:
+  sources:
+    refinitiv:
+      type: WEBSOCKET
+      enabled: true
+      url: wss://mock.websocket.fx/feed
+
+    fxclear:
+      type: FIX
+      enabled: true
+      connection:
+        host: localhost
+        port: 12345
+
+    jpmorgan:
+      type: REST
+      enabled: true
+      baseUrl: http://localhost:8081/fx
+      pollingIntervalMs: 1000
