@@ -1,0 +1,30 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 2000ms
+    database: 0
+
+pricing:
+  source-strategies:
+    P1: BEST_PRICE
+    P2: DEEP_AVG
+    P3: VWAP
+
+# Logging configuration
+logging:
+  level:
+    com.pricer: INFO
+    root: WARN
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+# Application configuration
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
