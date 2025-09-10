@@ -1,0 +1,19 @@
+fx:
+  sources:
+    refinitiv:
+      type: WEBSOCKET
+      enabled: true
+      url: wss://mock.websocket.fx/feed
+
+    fxclear:
+      type: FIX
+      enabled: true
+      connection:
+        host: localhost
+        port: 12345
+
+    jpmorgan:
+      type: REST
+      enabled: true
+      baseUrl: http://localhost:8081/fx
+      pollingIntervalMs: 1000
